@@ -1,0 +1,120 @@
+.menu-btn {
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include transition-ease;
+
+    &__burger {
+        position: absolute;
+        width: 32px;
+        height: 2px;
+        background: set-text-color($primary-color);
+        @include transition-ease;
+
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 8px;
+            width: 32px;
+            height: 2px;
+            background: set-text-color($primary-color);
+    @include transition-ease;
+
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 32px;
+            height: 2px;
+            bottom: -8px;
+            background: set-text-color($primary-color);
+    @include transition-ease;
+
+        }
+
+        &.open {
+            transform: rotate(720deg);
+            background: transparent;
+
+            &::before {
+                transform: rotate(45deg) translate(3px,8px);
+               
+            }
+
+            &::after {
+                transform: rotate(-45deg) translate(3px,-8px);
+               
+            }
+        }
+    }
+}
+
+.menu-nav {
+    z-index: 2;
+    height: 100vh;
+    background: $primary-color;
+    opacity: 0.98;
+    visibility: hidden;
+    transform: translateY(-100%);
+    @include transition-ease;
+    &.open{
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &__items {
+        
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        @include transition-ease;
+
+        &.open {
+            transform: translateX(0);
+        }
+    }
+
+    &__item {
+
+        padding: 2rem;
+        font-size: 1.5rem;
+        transform: translateX(100vw);
+        @include transition-ease;
+
+        &.open{
+            transform: translateX(0);
+        }
+
+        &.active>a{
+            color: $secondary-color;
+        }
+        a {
+            color: set-text-color($primary-color);
+
+
+            &:hover {
+                color: $secondary-color;
+                @include transition-ease
+            }
+        }
+    }
+}
+
+@for $i from 1 through 4 {
+    .menu-nav__item:nth-child(#{$i}){
+        transition-delay: ($i*0.1s)+0.15s;
+    }
+}
+

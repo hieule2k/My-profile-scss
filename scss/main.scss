@@ -1,0 +1,48 @@
+@import 'config';
+@import 'home';
+@import 'menu';
+@import 'about';
+@import 'projects';
+@import 'contact';
+@import 'responsive';
+
+body {
+    height: 100vh;
+    font-family: cursive;
+    background: $primary-color;
+    color: $primary-color;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    z-index: 1;
+}
+
+.secondary-color {
+    color: $secondary-color;
+}
+
+main {
+    height: 100%;
+
+    .social-icons {
+
+        
+        a {
+            color: set-text-color($primary-color);
+            padding: 0 4px;
+            @include transition-ease;
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+
+    }
+}
+
+a {
+    text-decoration: none;
+
+}

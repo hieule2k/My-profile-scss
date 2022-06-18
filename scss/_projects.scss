@@ -1,0 +1,105 @@
+.projects {
+    position: relative;
+    &-bio__image {
+        height: 40vh;
+        background: 
+        linear-gradient(
+            to right,
+            rgba($primary-color,0.4),
+            rgba($primary-color,0.1),
+        ),
+        url(/static/image/hieule.jpg) center center /cover;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        h1 {
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+    }
+
+    &-items {
+        width: 60vh;
+        display: grid;
+        grid-template-columns: 1fr;
+
+        padding: 2rem 0 6rem 0;
+        margin: 0 auto;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &-item {
+        position: relative;
+        z-index: 0;
+        margin-bottom: 3rem;
+        overflow: hidden;
+        border-bottom: 5px solid $secondary-color;
+        cursor: pointer;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            height: 100%;
+            width: 100%;
+            background: $secondary-color;
+            opacity: 0;
+            left: 0;
+            @include transition-ease;
+        }
+
+        &:hover {
+            &::after {
+                top:0;
+                opacity: 0.9;
+            }
+
+
+
+            .projects__btn{
+                opacity: 1;
+            }
+        }
+
+    }
+    &__btns {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        z-index: 1;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+        text-align: center;
+    }
+
+    &__btn {
+        color: #fff;
+        opacity: 0;
+        color: set-text-color($secondary-color);
+        @include transition-ease;
+
+        &:hover {
+            opacity: 1;
+            color: set-text-color(set-text-color($secondary-color));
+        }
+    }
+
+    .social-icons {
+        width: 100vw;
+        position: absolute;
+        bottom: 4rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            padding: 8px;
+            margin: 4px;
+        }
+    }
+}
+

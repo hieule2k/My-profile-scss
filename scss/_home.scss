@@ -1,0 +1,35 @@
+.home {
+    height: 100%;
+    padding-top: 40vh;
+    background: 
+    linear-gradient(
+        to right,
+        rgba($primary-color,0.2),
+        rgba($primary-color,-0.5)
+    )
+    ,url(/static/image/bh.jpg) center top/cover;
+    text-align: center;
+
+    &-bio {
+        font-size: 1.2rem;
+        h2{
+            margin-bottom: 1rem;
+        }
+        
+        &__name{
+            border-bottom: 3px solid set-text-color($primary-color);
+            margin-bottom: 0.4rem;
+            padding-bottom: 0.3rem;
+        }
+
+        &__lastName {
+            font-weight: 800;
+        }
+    }
+    
+    .social-icons{
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+    }
+}

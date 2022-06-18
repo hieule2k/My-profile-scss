@@ -1,0 +1,32 @@
+@include media-md {
+    .menu-btn {
+        visibility: hidden;
+    }
+
+    .menu-nav {
+        visibility: visible;
+        transform: translateY(0);
+        display: block;
+        background: transparent;
+        text-align: right;
+        height: 100%;
+
+        &__items {
+            display: inline-block;
+            margin-top: 2rem;
+            margin-right: 6rem;
+            transform: translateX(0);
+        }
+
+        &__item{
+            display: inline;
+            padding-right: 1.5rem;
+        }
+
+        &__link {
+            font-size: 1.5rem;
+        }
+    }
+
+
+}
